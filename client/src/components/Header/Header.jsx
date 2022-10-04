@@ -7,9 +7,9 @@ const Header = () => {
       <div className="header__wrap">
         <ul className="header__left">
           <li>
-            <a href="#">
-              <span>Home</span>
-            </a>
+            <Link to="/">
+              <a> Home</a>
+            </Link>
           </li>
         </ul>
         <div className="header__right">

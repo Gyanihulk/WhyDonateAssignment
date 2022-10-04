@@ -1,0 +1,14 @@
+.Search {
+  position: relative;
+  width: 100%;
+
+  padding-top: 100px;
+  background-color: blue;
+  text-align: center;
+  &__Tab{
+    align-items: center;
+    input{
+      background: transparent;
+    }
+  }
+}

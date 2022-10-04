@@ -37,7 +37,7 @@ const connect = async () => {
 };
 
 app.use("/api/auth", require("./routes/auth"));
-
+app.use("/api/movie", require("./routes/movie"));
 app.get("/", (req: Request, res: Response,) => {
   console.log("hello");
   res.send("hello")
