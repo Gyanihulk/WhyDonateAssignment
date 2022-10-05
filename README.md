@@ -1,0 +1,1 @@
+To Run the project run "npm start" in the folder api & client to start the backend & frontend respectively  

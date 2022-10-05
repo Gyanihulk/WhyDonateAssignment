@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./login.css";
-
+// Login PAge 
 const Login = () => {
   const [credentials, setCredentials] = useState({
     email: undefined,
@@ -27,7 +27,7 @@ const Login = () => {
         "http://localhost:5000/api/auth/login",
         credentials
       );
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.token });
       navigate("/Search");
       console.log("button");
     } catch (err) {
@@ -38,11 +38,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="lContainer">
-        <form
-          action="/Search"
-          name="myForm"
-          onSubmit={handleClick}
-        >
+        <form action="/Search" name="myForm" onSubmit={handleClick}>
           <table cellspacing="2" cellpadding="2" border="1">
             <tr>
               <td align="right">Email</td>
@@ -80,7 +76,7 @@ const Login = () => {
             </tr>
           </table>
         </form>
-        
+
         {error && <span>{error.message}</span>}
       </div>
     </div>

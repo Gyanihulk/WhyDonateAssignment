@@ -1,0 +1,45 @@
+
+.movie-card {
+  background: white;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: #dbe2ee 0 0 20px 5px;
+  display: flex;
+  gap: 30px;
+  color: #191847;
+}
+.movie-info{
+    background-color: blue;
+    width:65%;
+    border-radius: 10%;
+}
+.cover-image {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+img:hover{
+  transform: scale(1.05);
+}
+.image-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.movie-name {
+  margin: 10px 0 20px 0;
+  font-size: 22px;
+}
+
+
+.Description {
+  font-size: 14px;
+  color: gray;
+}
+.actors{
+  padding-top: 10px;
+}

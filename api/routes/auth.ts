@@ -43,14 +43,11 @@ router.post(
         return next(createError(400, "Wrong password or username!"));
 
       const token = jwt.sign({ id: user._id }, `${config.JWTSECRET}`);
-      // console.log(user)
-      const { password, ...otherDetails } = user;
+      
+      
       res
-        .cookie("access_token", token, {
-          httpOnly: true,
-        })
-        .status(200)
-        .json({ details: { ...otherDetails } });
+         .status(200)
+        .json({ token });
     } catch (err) {
       next(err);
     }

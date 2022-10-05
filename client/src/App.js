@@ -6,15 +6,14 @@ import Login from "./pages/login/Login";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Search from "./pages/Search/Search";
-
+import './base.scss'
 function App() {
   const ProtectedRoute = ({ children }) => {
-    const { user } = useContext(AuthContext);
-
-    if (!user) {
+    let token=localStorage.getItem("token")
+console.log(token)
+    if (!token) {
       return <Navigate to="/login" />;
     }
-
     return children;
   };
 

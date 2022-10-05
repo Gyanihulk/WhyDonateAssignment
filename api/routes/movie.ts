@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 import { NextFunction, Request, Response } from "express";
 import axios from "axios";
-const omdb = new (require("omdbapi"))("428b658c");
+import config from "../config";
+import { verifyToken } from "../utils/verifyToken";
+const omdb = new (require("omdbapi"))(config.OMDB_SECRET);
 const getOmdbClient = async () => {
   return axios.create({
     baseURL: "http://www.omdbapi.com",
@@ -16,6 +18,7 @@ const getOmdbClient = async () => {
 
 router.post(
   "/byname",
+  verifyToken,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { name } = req.body;
